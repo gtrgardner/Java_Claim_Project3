@@ -24,10 +24,9 @@ public class SurvivalStoreMain {
 		while (select == true) {
 			System.out.println("0. ADMINISTRATOR");
 			System.out.println("1. SEE ALL PRODUCTS.");
-			System.out.println("2. LIST PRODUCTS BY CATEGORY.");
-			System.out.println("3. VIEW SHOPPING CART.");
-			System.out.println("4. VIEW WALLET.");
-			System.out.println("5. EXIT PROGRAM.");
+			System.out.println("2. VIEW SHOPPING CART.");
+			System.out.println("3. VIEW WALLET.");
+			System.out.println("4. EXIT PROGRAM.");
 
 			int choice = sc.nextInt();
 
@@ -44,18 +43,10 @@ public class SurvivalStoreMain {
 				}
 				
 			} else if (choice == 2) {
-				prod = sd.ByCategory();
-				System.out.printf("%2s%30s%60s%10s%15s", "Id", "Category", "Name", "Price", "In Stock","\n");
-				for (Products pr : prod) {
 
-					System.out.println(pr);
-				}
+			}else if (choice == 3){
 				
-			} else if (choice == 3) {
-
-			}else if (choice == 4){
-				
-			}else if (choice == 5) {
+			}else if (choice == 4) {
 				select = false;
 			}
 			break;
