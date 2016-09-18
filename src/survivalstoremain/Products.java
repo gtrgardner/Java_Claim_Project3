@@ -1,7 +1,5 @@
 package survivalstoremain;
 
-import java.io.PrintStream;
-
 public class Products {
 	
 	private int id;
@@ -70,12 +68,7 @@ public class Products {
 	
 	public String toString(){
 		
-		//String str = id + category + name + price + num_in_stock;
-		
 		String str = String.format("%-2s%30s%60s%10s%15s", id, category, name, price, num_in_stock);
-				
-		//System.out.printf("%2s", id + category);
-			
 		return str;
 	}
 	
