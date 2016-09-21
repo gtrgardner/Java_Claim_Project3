@@ -7,13 +7,13 @@ public class Products {
 	private String name;
 	private float price;
 	private int num_in_stock;
-	private int custId;
+	/*private int custId;
 	private String lName;
 	private String fName;
 	private double walletTotal;
-	
+	*/
 
-	public int getCustId() {
+	/*public int getCustId() {
 		return custId;
 	}
 
@@ -50,7 +50,7 @@ public class Products {
 
 	public void setWalletTotal(double walletTotal) {
 		this.walletTotal = walletTotal;
-	}
+	}*/
 
 
 	public int getId() {

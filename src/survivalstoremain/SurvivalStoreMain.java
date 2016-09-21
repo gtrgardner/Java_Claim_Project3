@@ -1,5 +1,6 @@
 package survivalstoremain;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -12,7 +13,7 @@ public class SurvivalStoreMain {
 
 	}
 
-	public static <getConnection> void UserInterface() {
+	public static <getConnection> void UserInterface() throws SQLException {
 		SurvivalDAOImpl sd = new SurvivalDAOImpl();
 
 		Scanner sc = new Scanner(System.in);
@@ -36,7 +37,8 @@ public class SurvivalStoreMain {
 
 				prod = sd.ListBy(choice);
 				PrintResults();
-
+				
+				//UserInterface();
 			} else if (choice == 2) {
 
 				prod = sd.ListBy(choice);
@@ -53,7 +55,9 @@ public class SurvivalStoreMain {
 				PrintResults();
 
 			} else if (choice == 5) {
-
+				Wallet wal = new Wallet();
+				wal.WalletInter();
+						
 			} else if (choice == 6) {
 
 			} else if (choice == 7) {
@@ -73,7 +77,7 @@ public class SurvivalStoreMain {
 		}
 	}
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws SQLException {
 
 		UserInterface();
 

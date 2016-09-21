@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
+//import java.util.Scanner;
 
 
 public class SurvivalDAOImpl {
@@ -19,12 +20,12 @@ public class SurvivalDAOImpl {
 	}
 
 	// Establish connection
-	private Connection getConnection() throws SQLException {
+	public Connection getConnection() throws SQLException {
 		return DriverManager.getConnection("jdbc:mysql://localhost:3306/" + "products?autoReconnect=true&useSSL=false",
 				"robert", "robert");
 	}
 
-	private void closeConnection(Connection conn) {
+	public void closeConnection(Connection conn) {
 
 		if (conn == null) {
 			return;
@@ -36,11 +37,12 @@ public class SurvivalDAOImpl {
 		}
 
 	}
+		
+		public List<Products> ListBy(int sort) {
 
-	public List<Products> ListBy(int sort) {
-
+		//Scanner sc =new Scanner(System.in);
 		String sql = null;
-
+		
 		if (sort == 1) {
 			sql = ("SELECT * FROM inventory");
 		} else if (sort == 2) {
@@ -49,9 +51,16 @@ public class SurvivalDAOImpl {
 			sql = ("SELECT * FROM inventory ORDER BY name ASC");
 		} else if (sort == 4) {
 			sql = ("SELECT * FROM inventory ORDER BY price DESC");
-		} else {
-			// SurvivalStoreMain.UserInterface();
-		}
+		} else  {
+			}
+		
+							
+		/*}else{
+			// SurvivalStoreMain.UserInterface();	}*/
+		
+		
+		
+		
 		Connection conn = null;
 		ResultSet rs = null;
 		List<Products> result = new ArrayList<Products>();
@@ -67,7 +76,7 @@ public class SurvivalDAOImpl {
 				cat.setName(rs.getString("name"));
 				cat.setPrice(rs.getFloat("price"));
 				cat.setNum_in_stock(rs.getInt("num_in_stock"));
-
+				
 				result.add(cat);
 
 			}
