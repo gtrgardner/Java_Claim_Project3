@@ -12,7 +12,7 @@ import java.sql.SQLException;
 public class Wallet {
 
 	SurvivalDAOImpl impl = new SurvivalDAOImpl();
-
+//		database functionality for the user's wallet
 	public void WalletInter() throws SQLException {
 		String sql = null;
 		ResultSet rs = null;
